@@ -42,6 +42,7 @@ export default function InfiniteScroll(){
                 clearTimeout(timerId);
             }
             timerId = setTimeout(()=>{
+                console.log(111, "TO");
                 handleScrollFn(...args)
             }, delay)      
         }  
@@ -56,7 +57,7 @@ export default function InfiniteScroll(){
     window.addEventListener("scroll", debounce(handleScroll, 500))
 
     return(
-        <div> 
+        <div className="infinitebody"> 
          {length && data.map((dataItem)=>(
             <MovieCard movieData={dataItem}/>
          ))}
